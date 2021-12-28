@@ -7,7 +7,7 @@ class Game {
     };
 
     score = 0;
-    lines = 19;
+    lines = 0;
 
     playfield = this.createPlayField();
     activePiece = this.createPiece();

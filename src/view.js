@@ -46,18 +46,18 @@ class View {
 
     renderStartScreen() {
         this.context.fillStyle = 'white';
-        this.context.font = '18px "Press Start 2P"';
+        this.context.font = '40px "Press Start 2P"';
         this.context.textAlign = 'center';
         this.context.textBaseline = 'middle';
         this.context.fillText('Press ENTER to Start', this.width / 2, this.height / 2);
     }
 
     renderPauseScreen() {
-        this.context.fillStyle = 'rgba(0, 0, 0, 0, 0.75)';
+        this.context.fillStyle = 'rgba(0, 0, 0, 0.75)';
         this.context.fillRect(0, 0, this.width, this.height);
 
         this.context.fillStyle = 'white';
-        this.context.font = '18px "Press Start 2P"';
+        this.context.font = '40px "Press Start 2P"';
         this.context.textAlign = 'center';
         this.context.textBaseline = 'middle';
         this.context.fillText('Press ENTER to Resume', this.width / 2, this.height / 2);
@@ -97,10 +97,11 @@ class View {
     }
 
     renderPanel({ level, score, lines, nextPiece }) {
-        this.context.textAlign = 'Start';
+        this.context.textAlign = 'start';
         this.context.textBaseline = 'top';
-        this.fillStyle = 'white';
+        this.context.fillStyle = 'white';
         this.context.font = '14px "Press Start2P"';
+
 
         this.context.fillText(`Score: ${score}`, this.panelX, this.panelY + 0);
         this.context.fillText(`Lines: ${lines}`, this.panelX, this.panelY + 24);

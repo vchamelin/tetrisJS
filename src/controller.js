@@ -12,19 +12,19 @@ class Controller {
 
     update() {
         this.game.movePieceDown();
-        this.view.renderMainScreen(this.game.getState());
+        this.updateView();
     }
 
     play() {
         this.isPlaying = true;
         this.startTimer();
-        this.view.renderMainScreen(this.game.getState());
+        this.updateView();
     }
 
     pause() {
         this.isPlaying = false;
-        this.startTimer();
-        this.view.renderMainScreen(this.game.getState());
+        this.stopTimer();
+        this.updateView();
     }
 
     updateView() {
@@ -55,7 +55,7 @@ class Controller {
     handleKeyDown(event) {
         switch (event.keyCode){
             case 13: // Enter arrow
-                if (this.keyCode){
+                if (this.isPlaying){
                     this.pause();
                 } else {
                     this.play();
